@@ -1,0 +1,19 @@
+{
+  "name": "gokul-manga-portfolio",
+  "version": "1.0.0",
+  "description": "Japanese manga volume styled portfolio website for Gokul P Jith",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "manga",
+    "threejs",
+    "webgl",
+    "interactive"
+  ],
+  "author": "Gokul P Jith",
+  "license": "MIT"
+}
