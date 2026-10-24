@@ -4,6 +4,7 @@
   "description": "Japanese manga volume styled portfolio website for Gokul P Jith",
   "main": "index.html",
   "scripts": {
+    "build": "echo 'Static portfolio ready'",
     "start": "node server.js",
     "dev": "node server.js"
   },
