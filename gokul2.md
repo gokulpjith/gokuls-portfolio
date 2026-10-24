@@ -482,7 +482,7 @@ body::after{content:'';position:fixed;inset:-50%;z-index:9000;pointer-events:non
 .hero-main{min-width:0}
 .hero-art{position:relative;z-index:4;opacity:0;perspective:1200px;transform:translateY(36px) scale(.92);transition:transform .85s var(--ease-slam) var(--d,500ms),opacity .35s ease var(--d,500ms)}
 .ready .hero-art,.rm .hero-art{opacity:1;transform:translateY(0) scale(1)}
-.hero-art-card{position:relative;width:100%;max-width:340px;margin:0 auto;cursor:pointer;transform-style:preserve-3d;transition:transform .85s var(--ease-cut);transform:rotate(2.5deg);user-select:none;-webkit-tap-highlight-color:transparent}
+.hero-art-card{position:relative;width:100%;max-width:340px;margin:0 auto;cursor:pointer;transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transition:transform .85s var(--ease-cut);transform:rotate(2.5deg);user-select:none;-webkit-tap-highlight-color:transparent}
 .hero-art-card:hover{transform:rotate(0deg) scale(1.02)}
 .hero-art-card.flipped{transform:rotate(-2.5deg) rotateY(180deg)}
 .hero-art-card.flipped:hover{transform:rotate(0deg) rotateY(180deg) scale(1.02)}
@@ -1401,7 +1401,7 @@ if(document.fonts) document.fonts.ready.then(measure);
 measure();
 
 const pars=$$('[data-par]'),prog=$('#progFill');
-const navLinks=$('#menu a[data-go]');
+const navLinks=$$('#menu a[data-go]');
 const navSections=['#about','#skills','#experience','#projects','#education','#contact'].map(id=>$(id)).filter(Boolean);
 function updateActiveNav(){
   const scrollMid=scrollY+innerHeight*0.35;
