@@ -18,6 +18,7 @@
   font-weight:400 900;
   font-style:normal;
   font-display:swap;
+  unicode-range:U+0041-005A,U+0061-007A,U+0020-002F,U+003A-0040,U+005B-0060,U+007B-007E;
 }
 
 :root{
@@ -95,8 +96,33 @@ body::after{content:'';position:fixed;inset:-50%;z-index:9000;pointer-events:non
 .enso-progress{fill:none;stroke:var(--paper);stroke-width:7;stroke-dasharray:603.2;stroke-dashoffset:603.2;stroke-linecap:round;filter:drop-shadow(0 0 8px var(--blood));transition:stroke-dashoffset .08s linear}
 
 .enso-content{position:relative;z-index:2;text-align:center}
-.intro-num{font-family:'Sukajan Brush','Dela Gothic One',sans-serif;font-size:clamp(4.2rem,16vw,9rem);line-height:.95;letter-spacing:-.02em;color:var(--paper);text-shadow:4px 4px 0 var(--blood)}
-.pct-sym{font-family:'Chakra Petch',sans-serif;font-size:.45em;font-weight:800;color:var(--blood);margin-left:4px;vertical-align:super}
+.intro-num{
+  display:inline-flex;
+  align-items:baseline;
+  justify-content:center;
+  font-family:'Dela Gothic One','Chakra Petch',sans-serif;
+  font-size:clamp(4.2rem,15vw,8.5rem);
+  line-height:.95;
+  letter-spacing:-.02em;
+  color:var(--paper);
+  text-shadow:4px 4px 0 var(--blood),0 0 24px rgba(179,0,27,.6);
+}
+#pct{
+  display:inline-block;
+  font-family:'Dela Gothic One','Chakra Petch',sans-serif;
+  font-variant-numeric:tabular-nums;
+  min-width:1.6ch;
+  text-align:right;
+}
+.pct-sym{
+  font-family:'Dela Gothic One','Chakra Petch',sans-serif;
+  font-size:.45em;
+  font-weight:400;
+  color:var(--blood);
+  margin-left:4px;
+  vertical-align:baseline;
+  text-shadow:none;
+}
 .anime-ki-label{font-family:'Chakra Petch',sans-serif;font-weight:700;font-size:clamp(.72rem,1.4vw,1rem);letter-spacing:.16em;color:var(--blood);margin-top:8px;text-transform:uppercase}
 
 .anime-overdrive-status{margin-top:24px;font-size:clamp(.75rem,1.3vw,.92rem);letter-spacing:.14em;font-weight:700;color:var(--paper);background:rgba(10,10,10,.8);border:2px solid var(--blood);padding:6px 18px;transform:skewX(-10deg);box-shadow:4px 4px 0 var(--blood)}
@@ -1186,7 +1212,7 @@ function runIntro(){
     currentK=k;
     const progress=(1-Math.pow(1-k,3));
     const val=Math.floor(progress*100);
-    if(pct) pct.textContent=val;
+    if(pct) pct.textContent = String(val);
 
     const offset=C*(1-progress);
     if(ensoP) ensoP.style.strokeDashoffset=offset;
