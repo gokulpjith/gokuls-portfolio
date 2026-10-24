@@ -1,6 +1,14 @@
 {
-  "version": 2,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": ".",
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/SukajanBrush.otf",
@@ -20,7 +28,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(webp|jpg|png|svg)",
+      "source": "/(.*)\\.(webp|jpg|png|svg|otf)",
       "headers": [
         {
           "key": "Cache-Control",
